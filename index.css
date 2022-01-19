@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 98%);
+    color: hsl(234, 12%, 34%, 0.98);
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    width: 20rem;
+    max-width: 120rem;
+    margin: 5rem 1rem 3rem;
+}
+
+
+/* Mobile first design */
+/* ------------------------- */
+/* Top header text */
+.header-text {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.header-text p {
+    color: hsl(229, 6%, 66%);
+
+}
+.header-text h1 span {
+    font-weight: 200;
+}
+.card {
+    height: 15rem;
+    margin-bottom: 1.8rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.card::before {
+    content: "";
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.blue {
+    grid-area: blue-card;
+
+}
+
+.blue.card::before {
+    background-color: hsl(180, 62%, 55%);
+}
+
+.red {
+    grid-area: red-card;
+
+}
+
+.red.card::before {
+    background-color: hsl(0, 78%, 62%);
+    grid-area: red-card;
+}
+
+.orange {
+    grid-area: orange-card;
+
+}
+
+.orange.card::before {
+    background-color: hsl(34, 97%, 64%);
+    grid-area: orange-card;
+}
+
+.dark-blue {
+    grid-area: dark-blue-card;
+}
+
+.dark-blue.card::before {
+    background-color: hsl(212, 86%, 64%);
+    grid-area: dark-blue-card;
+}
+
+.card img {
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: hsl(229, 6%, 66%);
+
+}
+
+@media (min-width:750px) and (max-width:860px) {
+    .wrapper {
+        width: 80%;
+    }
+
+    .container {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "blue-card red-card "
+            "orange-card dark-blue-card"
+        ;
+        grid-gap: 1.5rem;
+
+    }
+}
+
+    /* Desktop design */
+/* -------------------- */
+@media (min-width:860px) {
+    .wrapper {
+        width: 68rem;
+        height: fit-content;
+        max-width: 120rem;
+        margin-top: 4rem;
+    }
+
+    .header-text {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .header-text h1 {
+        margin-bottom: 1rem;
+    }
+
+    .header-text p {
+        font-size: 0.9rem;
+    }
+  
+    .card {
+        width: 16rem;
+        height: 11rem;
+        margin-bottom: 0;
+        padding: 1.5rem;
+    }
+
+    .card img {
+        height: 2.7rem;
+    }
+
+    .card h4 {
+        font-size: 0.9rem;
+        font-size:400;
+    }
+    .header-text h1 span {
+        font-weight: 200;
+    }
+    .card p {
+        font-size: 0.6rem;
+    }
+
+    .container {
+        width: fit-content;
+        max-width: 120rem;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: ". red-card ."
+            "blue-card red-card dark-blue-card"
+            "blue-card orange-card dark-blue-card"
+            ". orange-card .";
+        grid-gap: 1.5rem;
+
+    }
+
+    .card::before {
+        content: "";
+        width: 100%;
+        height: 3px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+}
